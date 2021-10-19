@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/estilos.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+  <div id="Linea"></div>
+   <header id="encabezado">
+       <h1>Encuesta</h1>
+   </header>
+   <section id="seccion">
+       <div class="forms">
+            <h3>¿Te gusta programar?</h3>
+            <div class="form-check form-check-inline">
+            <input class="form-check" type="radio" id="inlineRadio1" value="Si"
+            v-model="resp" @click="iniciar()" checked>
+            <label class="form-check-label" for="inlineRadio1">Si</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-checkt" type="radio" id="inlineRadio2" value="No" 
+            v-model="resp" @click="iniciar()">
+            <label class="form-check-label" for="inlineRadio2">No</label>
+          </div>        
+          <br>
+          <span>Eligio: {{resp}}</span>
+       </div>
+       <hr>
+
+       <div v-if="form2">
+        <div class="forms">
+         <h4>¿Cuánto tiempo llevas programando?</h4>
+         <input type="number" id="time-program" v-model="time" placeholder="Años que llevas programando">
+         <p class="result1">Respuesta: {{time}} años</p>
+       </div>
+
+       <div class="forms" v-if="time<=2">
+        <h4>¿Qué te motiva a programar?</h4>
+         <input type="text" id="motivateprogram" v-model="motivate" placeholder="Escribe tu respuesta">
+         <p class="result1">Respuesta: {{motivate}}</p>
+       </div>
+
+       <div clas="forms" v-else>
+         <h4>Cuentanos tu experiencia programando</h4>
+          <input type="text" id="experienceprogram" v-model="experience" placeholder="Escribe tu respuesta">
+          <p class="result1">Respuesta: {{experience}}</p>
+       </div>
+
+       <div class="forms">
+         <h4>¿Cuántos lenguajes de programación conoces?</h4>
+         <input type="text" class="forms" id="languageprogram" v-model="language" placeholder="Escribe tu respuesta">
+         <p class="result1">Respuesta: {{language}}</p>
+       </div>
+      </div>
+
+      <div v-else>
+         <h2>¡¡Gracias por apoyarnos!!</h2>
+      </div>
+   </section>
+<div id="Linea"></div>
+<footer id="pie">Joselin Escalante</footer>
+<script src="JS/vue1.js"></script>
+</body>
+</html>

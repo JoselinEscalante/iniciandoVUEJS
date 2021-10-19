@@ -1,0 +1,28 @@
+body{
+	padding: 0;
+	margin: 0;
+	font-family: calibri light;
+}
+
+#Linea{
+	height: 10px;
+	background: #3670AB;
+	width: 100%;
+}
+
+#encabezado{
+	width: 100%;
+	background: #0b2f3a;
+	height: 70px;
+	text-align: center;
+	color: white;
+}
+
+#seccion{
+	margin: 20px 50px;
+	text-align: center;
+}
+
+#pie{
+	text-align: center;
+}
